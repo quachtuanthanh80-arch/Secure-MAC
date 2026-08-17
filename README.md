@@ -60,7 +60,6 @@ D:\NCKH
 │   ├── README.md
 │   ├── rtl_summary_tables.md     # Bảng tra cứu cổng 15 modules RTL
 │   ├── hierarchy_data.json       # Cây phân cấp phần cứng trích xuất từ PySlang
-│   └── thu_xin_gvhd.md           # Thư xin Giáo viên Hướng dẫn
 ├── reports/              # Báo cáo thực nghiệm, ma trận heatmap và datasets
 │   ├── README.md
 │   ├── exhaustive_fault_injection_report.md  # Báo cáo tổng kết 81,000 ca tiêm lỗi

@@ -161,8 +161,4 @@ python tools/exhaustive_fault_injection.py
 
 ---
 
-## 🎯 Định hướng Công bố Quốc tế & Ứng tuyển Thạc sĩ Tohoku
 
-Dự án được chuẩn bị theo cấu trúc bài báo khoa học chuẩn quốc tế:
-* **Tạp chí mục tiêu:** **IEEE Access (Scopus Q1)** hoặc **IEEE Embedded Systems Letters (Scopus Q2)**.
-* **Định hướng nghiên cứu:** Phù hợp trực tiếp với hướng nghiên cứu của **Prof. Naofumi Homma** (*Hardware Security & Fault Injection Countermeasures*) và **Prof. Takahiro Hanyu** (*Resilient VLSI Architectures*) tại **RIEC / GSIS, Đại học Tohoku (Tohoku University), Nhật Bản**.

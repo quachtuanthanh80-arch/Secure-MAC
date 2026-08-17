@@ -1,0 +1,326 @@
+{
+  "single_bit": {
+    "pipe_product": {
+      "total_injected": 800,
+      "detected": 800,
+      "sdc": 0,
+      "masked": 0,
+      "bit_breakdown": {
+        "bit_0": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_1": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_2": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_3": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_4": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_5": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_6": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_7": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_8": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_9": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_10": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_11": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_12": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_13": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_14": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_15": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        }
+      }
+    },
+    "pipe_c": {
+      "total_injected": 1600,
+      "detected": 1600,
+      "sdc": 0,
+      "masked": 0,
+      "bit_breakdown": {
+        "bit_0": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_1": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_2": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_3": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_4": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_5": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_6": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_7": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_8": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_9": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_10": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_11": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_12": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_13": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_14": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_15": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_16": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_17": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_18": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_19": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_20": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_21": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_22": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_23": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_24": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_25": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_26": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_27": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_28": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_29": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_30": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        },
+        "bit_31": {
+          "injected": 50,
+          "detected": 50,
+          "sdc": 0,
+          "masked": 0
+        }
+      }
+    }
+  },
+  "double_bit": {
+    "total_injected": 1000,
+    "detected": 509,
+    "sdc": 491,
+    "masked": 0,
+    "fdr": 50.9,
+    "sdc_rate": 49.1
+  },
+  "multi_bit": {
+    "total_injected": 1000,
+    "detected": 674,
+    "sdc": 326,
+    "masked": 0,
+    "fdr": 67.4,
+    "sdc_rate": 32.6
+  },
+  "stuck_at": {},
+  "summary": {}
+}

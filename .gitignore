@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+
+# Cocotb & Icarus Verilog simulation artifacts
+sim_build/
+*.vvp
+*.vcd
+*.fst
+results.xml
+*.result.xml
+
+# Vivado / EDA synthesis logs & temporary files
+*.jou
+*.log
+*.str
+.Xil/
+*.dcp.tmp
+
+# OS generated files
+.DS_Store
+Thumbs.db

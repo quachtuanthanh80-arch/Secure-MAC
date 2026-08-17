@@ -1,0 +1,1464 @@
+[
+  {
+    "instance_name": "alu_top",
+    "module_name": "alu_top",
+    "parameters": [
+      {
+        "name": "S_IDLE",
+        "type": "logic[2:0]"
+      },
+      {
+        "name": "S_DECODE",
+        "type": "logic[2:0]"
+      },
+      {
+        "name": "S_EXECUTE",
+        "type": "logic[2:0]"
+      },
+      {
+        "name": "S_DONE",
+        "type": "logic[2:0]"
+      },
+      {
+        "name": "S_ERROR",
+        "type": "logic[2:0]"
+      }
+    ],
+    "ports": [
+      {
+        "name": "clk",
+        "direction": "In",
+        "type": "logic"
+      },
+      {
+        "name": "rst_n",
+        "direction": "In",
+        "type": "logic"
+      },
+      {
+        "name": "opcode",
+        "direction": "In",
+        "type": "logic[6:0]"
+      },
+      {
+        "name": "funct3",
+        "direction": "In",
+        "type": "logic[2:0]"
+      },
+      {
+        "name": "funct7",
+        "direction": "In",
+        "type": "logic[6:0]"
+      },
+      {
+        "name": "operand_a",
+        "direction": "In",
+        "type": "logic[31:0]"
+      },
+      {
+        "name": "operand_b",
+        "direction": "In",
+        "type": "logic[31:0]"
+      },
+      {
+        "name": "alu_result",
+        "direction": "Out",
+        "type": "reg[31:0]"
+      },
+      {
+        "name": "zero_flag",
+        "direction": "Out",
+        "type": "reg"
+      },
+      {
+        "name": "carry_flag",
+        "direction": "Out",
+        "type": "reg"
+      },
+      {
+        "name": "RegWrite",
+        "direction": "Out",
+        "type": "reg"
+      },
+      {
+        "name": "ResultSrc",
+        "direction": "Out",
+        "type": "reg[1:0]"
+      },
+      {
+        "name": "MemWrite",
+        "direction": "Out",
+        "type": "reg"
+      },
+      {
+        "name": "MemRead",
+        "direction": "Out",
+        "type": "reg"
+      },
+      {
+        "name": "Branch",
+        "direction": "Out",
+        "type": "reg"
+      },
+      {
+        "name": "Jump",
+        "direction": "Out",
+        "type": "reg"
+      },
+      {
+        "name": "ALUSrcA",
+        "direction": "Out",
+        "type": "reg[1:0]"
+      },
+      {
+        "name": "ALUSrcB",
+        "direction": "Out",
+        "type": "reg[1:0]"
+      },
+      {
+        "name": "ALUOp",
+        "direction": "Out",
+        "type": "reg[3:0]"
+      },
+      {
+        "name": "ImmSrc",
+        "direction": "Out",
+        "type": "reg[2:0]"
+      },
+      {
+        "name": "MacStart",
+        "direction": "Out",
+        "type": "reg"
+      },
+      {
+        "name": "fsm_state",
+        "direction": "Out",
+        "type": "logic[2:0]"
+      }
+    ],
+    "children": [
+      {
+        "instance_name": "u_control",
+        "module_name": "control_unit",
+        "parameters": [
+          {
+            "name": "RType",
+            "type": "logic[6:0]"
+          },
+          {
+            "name": "IType",
+            "type": "logic[6:0]"
+          },
+          {
+            "name": "LOAD",
+            "type": "logic[6:0]"
+          },
+          {
+            "name": "STORE",
+            "type": "logic[6:0]"
+          },
+          {
+            "name": "BRANCH",
+            "type": "logic[6:0]"
+          },
+          {
+            "name": "LUI",
+            "type": "logic[6:0]"
+          },
+          {
+            "name": "AUIPC",
+            "type": "logic[6:0]"
+          },
+          {
+            "name": "JAL",
+            "type": "logic[6:0]"
+          },
+          {
+            "name": "JALR",
+            "type": "logic[6:0]"
+          },
+          {
+            "name": "MacOp",
+            "type": "logic[6:0]"
+          }
+        ],
+        "ports": [
+          {
+            "name": "opcode",
+            "direction": "In",
+            "type": "logic[6:0]"
+          },
+          {
+            "name": "funct3",
+            "direction": "In",
+            "type": "logic[2:0]"
+          },
+          {
+            "name": "funct7",
+            "direction": "In",
+            "type": "logic[6:0]"
+          },
+          {
+            "name": "RegWrite",
+            "direction": "Out",
+            "type": "logic"
+          },
+          {
+            "name": "ResultSrc",
+            "direction": "Out",
+            "type": "logic[1:0]"
+          },
+          {
+            "name": "MemWrite",
+            "direction": "Out",
+            "type": "logic"
+          },
+          {
+            "name": "MemRead",
+            "direction": "Out",
+            "type": "logic"
+          },
+          {
+            "name": "Branch",
+            "direction": "Out",
+            "type": "logic"
+          },
+          {
+            "name": "Jump",
+            "direction": "Out",
+            "type": "logic"
+          },
+          {
+            "name": "ALUSrcA",
+            "direction": "Out",
+            "type": "logic[1:0]"
+          },
+          {
+            "name": "ALUSrcB",
+            "direction": "Out",
+            "type": "logic[1:0]"
+          },
+          {
+            "name": "ALUOp",
+            "direction": "Out",
+            "type": "logic[3:0]"
+          },
+          {
+            "name": "ImmSrc",
+            "direction": "Out",
+            "type": "logic[2:0]"
+          },
+          {
+            "name": "MacStart",
+            "direction": "Out",
+            "type": "logic"
+          }
+        ],
+        "children": []
+      },
+      {
+        "instance_name": "u_alu",
+        "module_name": "alu",
+        "parameters": [],
+        "ports": [
+          {
+            "name": "alu_op",
+            "direction": "In",
+            "type": "logic[3:0]"
+          },
+          {
+            "name": "a",
+            "direction": "In",
+            "type": "logic[31:0]"
+          },
+          {
+            "name": "b",
+            "direction": "In",
+            "type": "logic[31:0]"
+          },
+          {
+            "name": "result",
+            "direction": "Out",
+            "type": "logic[31:0]"
+          },
+          {
+            "name": "zero",
+            "direction": "Out",
+            "type": "logic"
+          },
+          {
+            "name": "carry",
+            "direction": "Out",
+            "type": "logic"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "instance_name": "top_module",
+    "module_name": "top_module",
+    "parameters": [],
+    "ports": [
+      {
+        "name": "clk",
+        "direction": "In",
+        "type": "logic"
+      },
+      {
+        "name": "rst_n",
+        "direction": "In",
+        "type": "logic"
+      },
+      {
+        "name": "irq",
+        "direction": "Out",
+        "type": "logic"
+      }
+    ],
+    "children": [
+      {
+        "instance_name": "u_mac",
+        "module_name": "secure_mac",
+        "parameters": [
+          {
+            "name": "IN_WIDTH",
+            "type": "logic signed[31:0]"
+          },
+          {
+            "name": "OUT_WIDTH",
+            "type": "logic signed[31:0]"
+          }
+        ],
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic"
+          },
+          {
+            "name": "rst_n",
+            "direction": "In",
+            "type": "logic"
+          },
+          {
+            "name": "a",
+            "direction": "In",
+            "type": "logic signed[7:0]"
+          },
+          {
+            "name": "b",
+            "direction": "In",
+            "type": "logic signed[7:0]"
+          },
+          {
+            "name": "c",
+            "direction": "In",
+            "type": "logic signed[15:0]"
+          },
+          {
+            "name": "start",
+            "direction": "In",
+            "type": "logic"
+          },
+          {
+            "name": "out",
+            "direction": "Out",
+            "type": "reg signed[15:0]"
+          },
+          {
+            "name": "fault_detected",
+            "direction": "Out",
+            "type": "reg"
+          },
+          {
+            "name": "valid",
+            "direction": "Out",
+            "type": "reg"
+          },
+          {
+            "name": "rollback",
+            "direction": "Out",
+            "type": "reg"
+          }
+        ],
+        "children": [
+          {
+            "instance_name": "u_enc_a",
+            "module_name": "mod3_encoder_8b",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "in",
+                "direction": "In",
+                "type": "logic[7:0]"
+              },
+              {
+                "name": "out",
+                "direction": "Out",
+                "type": "reg[1:0]"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_enc_b",
+            "module_name": "mod3_encoder_8b",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "in",
+                "direction": "In",
+                "type": "logic[7:0]"
+              },
+              {
+                "name": "out",
+                "direction": "Out",
+                "type": "reg[1:0]"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_enc_c",
+            "module_name": "mod3_encoder_32b",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "out",
+                "direction": "Out",
+                "type": "reg[1:0]"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_enc_out",
+            "module_name": "mod3_encoder_32b",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "out",
+                "direction": "Out",
+                "type": "reg[1:0]"
+              }
+            ],
+            "children": []
+          }
+        ]
+      },
+      {
+        "instance_name": "u_dmem",
+        "module_name": "dmem",
+        "parameters": [],
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic"
+          },
+          {
+            "name": "we",
+            "direction": "In",
+            "type": "logic"
+          },
+          {
+            "name": "a",
+            "direction": "In",
+            "type": "logic[31:0]"
+          },
+          {
+            "name": "wd",
+            "direction": "In",
+            "type": "logic[31:0]"
+          },
+          {
+            "name": "rd",
+            "direction": "Out",
+            "type": "logic[31:0]"
+          }
+        ],
+        "children": []
+      },
+      {
+        "instance_name": "u_cpu",
+        "module_name": "riscv_cpu",
+        "parameters": [],
+        "ports": [
+          {
+            "name": "clk",
+            "direction": "In",
+            "type": "logic"
+          },
+          {
+            "name": "rst_n",
+            "direction": "In",
+            "type": "logic"
+          },
+          {
+            "name": "mem_addr",
+            "direction": "Out",
+            "type": "logic[31:0]"
+          },
+          {
+            "name": "mem_write",
+            "direction": "Out",
+            "type": "logic"
+          },
+          {
+            "name": "mem_wdata",
+            "direction": "Out",
+            "type": "logic[31:0]"
+          },
+          {
+            "name": "mem_valid",
+            "direction": "Out",
+            "type": "logic"
+          },
+          {
+            "name": "mem_ready",
+            "direction": "In",
+            "type": "logic"
+          },
+          {
+            "name": "mem_rdata",
+            "direction": "In",
+            "type": "logic[31:0]"
+          },
+          {
+            "name": "mac_start",
+            "direction": "Out",
+            "type": "logic"
+          },
+          {
+            "name": "mac_a",
+            "direction": "Out",
+            "type": "logic[7:0]"
+          },
+          {
+            "name": "mac_b",
+            "direction": "Out",
+            "type": "logic[7:0]"
+          },
+          {
+            "name": "mac_c",
+            "direction": "Out",
+            "type": "logic[15:0]"
+          },
+          {
+            "name": "mac_out",
+            "direction": "In",
+            "type": "logic[15:0]"
+          },
+          {
+            "name": "mac_fault",
+            "direction": "In",
+            "type": "logic"
+          },
+          {
+            "name": "mac_valid",
+            "direction": "In",
+            "type": "logic"
+          },
+          {
+            "name": "mac_rollback",
+            "direction": "In",
+            "type": "logic"
+          },
+          {
+            "name": "irq",
+            "direction": "In",
+            "type": "logic"
+          },
+          {
+            "name": "reg_write",
+            "direction": "Out",
+            "type": "logic"
+          },
+          {
+            "name": "rd_addr",
+            "direction": "Out",
+            "type": "logic[4:0]"
+          },
+          {
+            "name": "rs1_addr",
+            "direction": "Out",
+            "type": "logic[4:0]"
+          },
+          {
+            "name": "rs2_addr",
+            "direction": "Out",
+            "type": "logic[4:0]"
+          },
+          {
+            "name": "alu_out",
+            "direction": "Out",
+            "type": "logic[31:0]"
+          },
+          {
+            "name": "pc",
+            "direction": "Out",
+            "type": "logic[31:0]"
+          },
+          {
+            "name": "mem_read",
+            "direction": "Out",
+            "type": "logic"
+          },
+          {
+            "name": "pc_next",
+            "direction": "Out",
+            "type": "logic[31:0]"
+          }
+        ],
+        "children": [
+          {
+            "instance_name": "u_imem",
+            "module_name": "imem",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "a",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rd",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_pipe_if_id",
+            "module_name": "pipe_if_id",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "clk",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "rst_n",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "stall",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "flush",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "pc_in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "instr_in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "pc_out",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "instr_out",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_decoder",
+            "module_name": "instruction_decoder",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "instr",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "opcode",
+                "direction": "Out",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "funct3",
+                "direction": "Out",
+                "type": "logic[2:0]"
+              },
+              {
+                "name": "funct7",
+                "direction": "Out",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "rs1",
+                "direction": "Out",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rs2",
+                "direction": "Out",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rd_addr",
+                "direction": "Out",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "imm_i",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "imm_s",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "imm_b",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "imm_u",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "imm_j",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_control",
+            "module_name": "control_unit",
+            "parameters": [
+              {
+                "name": "RType",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "IType",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "LOAD",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "STORE",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "BRANCH",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "LUI",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "AUIPC",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "JAL",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "JALR",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "MacOp",
+                "type": "logic[6:0]"
+              }
+            ],
+            "ports": [
+              {
+                "name": "opcode",
+                "direction": "In",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "funct3",
+                "direction": "In",
+                "type": "logic[2:0]"
+              },
+              {
+                "name": "funct7",
+                "direction": "In",
+                "type": "logic[6:0]"
+              },
+              {
+                "name": "RegWrite",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "ResultSrc",
+                "direction": "Out",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "MemWrite",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "MemRead",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "Branch",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "Jump",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "ALUSrcA",
+                "direction": "Out",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "ALUSrcB",
+                "direction": "Out",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "ALUOp",
+                "direction": "Out",
+                "type": "logic[3:0]"
+              },
+              {
+                "name": "ImmSrc",
+                "direction": "Out",
+                "type": "logic[2:0]"
+              },
+              {
+                "name": "MacStart",
+                "direction": "Out",
+                "type": "logic"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_regfile",
+            "module_name": "regfile",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "clk",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "rst_n",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "rs1_addr",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rs1_data",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rs2_addr",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rs2_data",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "reg_write",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "rd_addr",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rd_data",
+                "direction": "In",
+                "type": "logic[31:0]"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_branch_cmp",
+            "module_name": "branch_cmp",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "a",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "b",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "funct3",
+                "direction": "In",
+                "type": "logic[2:0]"
+              },
+              {
+                "name": "branch_en",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "branch_taken",
+                "direction": "Out",
+                "type": "logic"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_pipe_id_ex",
+            "module_name": "pipe_id_ex",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "clk",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "rst_n",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "flush",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "RegWrite_in",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "ResultSrc_in",
+                "direction": "In",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "MemWrite_in",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "MemRead_in",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "Branch_in",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "Jump_in",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "ALUSrcA_in",
+                "direction": "In",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "ALUSrcB_in",
+                "direction": "In",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "ALUOp_in",
+                "direction": "In",
+                "type": "logic[3:0]"
+              },
+              {
+                "name": "pc_in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rs1_data_in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rs2_data_in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "imm_in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rs1_addr_in",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rs2_addr_in",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rd_addr_in",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "RegWrite_out",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "ResultSrc_out",
+                "direction": "Out",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "MemWrite_out",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "MemRead_out",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "Branch_out",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "Jump_out",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "ALUSrcA_out",
+                "direction": "Out",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "ALUSrcB_out",
+                "direction": "Out",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "ALUOp_out",
+                "direction": "Out",
+                "type": "logic[3:0]"
+              },
+              {
+                "name": "pc_out",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rs1_data_out",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rs2_data_out",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "imm_out",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rs1_addr_out",
+                "direction": "Out",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rs2_addr_out",
+                "direction": "Out",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rd_addr_out",
+                "direction": "Out",
+                "type": "logic[4:0]"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_alu",
+            "module_name": "alu",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "alu_op",
+                "direction": "In",
+                "type": "logic[3:0]"
+              },
+              {
+                "name": "a",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "b",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "result",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "zero",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "carry",
+                "direction": "Out",
+                "type": "logic"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_pipe_ex_mem",
+            "module_name": "pipe_ex_mem",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "clk",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "rst_n",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "RegWrite_in",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "ResultSrc_in",
+                "direction": "In",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "MemWrite_in",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "MemRead_in",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "alu_result_in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rs2_data_in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rd_addr_in",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "pc_plus_4_in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "RegWrite_out",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "ResultSrc_out",
+                "direction": "Out",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "MemWrite_out",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "MemRead_out",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "alu_result_out",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rs2_data_out",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rd_addr_out",
+                "direction": "Out",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "pc_plus_4_out",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_pipe_mem_wb",
+            "module_name": "pipe_mem_wb",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "clk",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "rst_n",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "RegWrite_in",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "ResultSrc_in",
+                "direction": "In",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "alu_result_in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "mem_rdata_in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rd_addr_in",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "pc_plus_4_in",
+                "direction": "In",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "RegWrite_out",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "ResultSrc_out",
+                "direction": "Out",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "alu_result_out",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "mem_rdata_out",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              },
+              {
+                "name": "rd_addr_out",
+                "direction": "Out",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "pc_plus_4_out",
+                "direction": "Out",
+                "type": "logic[31:0]"
+              }
+            ],
+            "children": []
+          },
+          {
+            "instance_name": "u_hazard",
+            "module_name": "hazard_unit",
+            "parameters": [],
+            "ports": [
+              {
+                "name": "rs1_addr_EX",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rs2_addr_EX",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rd_addr_MEM",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "RegWrite_MEM",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "rd_addr_WB",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "RegWrite_WB",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "MemRead_EX",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "rd_addr_EX",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rs1_addr_ID",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "rs2_addr_ID",
+                "direction": "In",
+                "type": "logic[4:0]"
+              },
+              {
+                "name": "branch_taken_ID",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "jump_ID",
+                "direction": "In",
+                "type": "logic"
+              },
+              {
+                "name": "forwardA_EX",
+                "direction": "Out",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "forwardB_EX",
+                "direction": "Out",
+                "type": "logic[1:0]"
+              },
+              {
+                "name": "stall_IF",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "stall_ID",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "flush_ID",
+                "direction": "Out",
+                "type": "logic"
+              },
+              {
+                "name": "flush_EX",
+                "direction": "Out",
+                "type": "logic"
+              }
+            ],
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]
